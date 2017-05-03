@@ -90,8 +90,22 @@ class TasksTableViewController: UITableViewController {
         firstTaskLabel.textColor = firstTaskTextView.text.isEmpty ? ColorPalette.inactiveGrayColor : ColorPalette.activeGrayColor
         secondTaskLabel.textColor = secondTaskTextView.text.isEmpty ? ColorPalette.inactiveGrayColor : ColorPalette.activeGrayColor
         thirdTaskLabel.textColor = thirdTaskTextView.text.isEmpty ? ColorPalette.inactiveGrayColor : ColorPalette.activeGrayColor
+        updateClearButton()
         tableView.beginUpdates()
         tableView.endUpdates()
+    }
+
+    fileprivate func updateClearButton() {
+        if !thirdTaskTextView.text.isEmpty {
+            clearBarButtonItem.image = #imageLiteral(resourceName: "topThree-allFilled")
+        } else if !secondTaskTextView.text.isEmpty {
+            clearBarButtonItem.image = #imageLiteral(resourceName: "topThree-2Filled")
+        } else if !firstTaskTextView.text.isEmpty {
+            clearBarButtonItem.image = #imageLiteral(resourceName: "topThree-1Filled")
+        } else {
+            clearBarButtonItem.image = #imageLiteral(resourceName: "topThree-noneFilled")
+        }
+
     }
 
     @IBAction func clearButtonPressed(_ sender: UIBarButtonItem) {
@@ -113,6 +127,8 @@ extension TasksTableViewController {
 
 }
 
+// MARK: - Text view delegate
+
 extension TasksTableViewController: UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
@@ -126,6 +142,7 @@ extension TasksTableViewController: UITextViewDelegate {
 
     func textViewDidEndEditing(_ textView: UITextView) {
         updateTask(from: textView)
+        updateClearButton()
         if textView.text.isEmpty {
             label(for: textView)?.textColor = ColorPalette.inactiveGrayColor
         }
