@@ -108,6 +108,8 @@ class TasksTableViewController: UITableViewController {
 
     }
 
+    // MARK: - Actions
+
     @IBAction func clearButtonPressed(_ sender: UIBarButtonItem) {
         view.endEditing(true)
         taskDay.clearTasks()
