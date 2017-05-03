@@ -18,6 +18,7 @@
 		0F5D17501EBA3B2C00031A85 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D174C1EBA3B2C00031A85 /* Day.swift */; };
 		0F5D17521EBA3B2C00031A85 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D174E1EBA3B2C00031A85 /* Task.swift */; };
 		0F5D17571EBA3EDC00031A85 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D17561EBA3EDB00031A85 /* Managed.swift */; };
+		0F5D175B1EBA4F7400031A85 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D175A1EBA4F7400031A85 /* TasksTableViewController.swift */; };
 		0F5D175D1EBA543700031A85 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D175C1EBA543600031A85 /* ColorPalette.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		0F5D174C1EBA3B2C00031A85 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		0F5D174E1EBA3B2C00031A85 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		0F5D17561EBA3EDB00031A85 /* Managed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
+		0F5D175A1EBA4F7400031A85 /* TasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		0F5D175C1EBA543600031A85 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,10 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				0F5D17541EBA3BC100031A85 /* Model */,
-				0F5D17011EBA2D4400031A85 /* AppDelegate.swift */,
+				0F5D175A1EBA4F7400031A85 /* TasksTableViewController.swift */,
 				0F5D175C1EBA543600031A85 /* ColorPalette.swift */,
 				0F5D17551EBA3DE800031A85 /* CoreDataHelpers */,
 				0F5D17311EBA315C00031A85 /* TopThreeTasks.xcdatamodeld */,
+				0F5D17011EBA2D4400031A85 /* AppDelegate.swift */,
 				0F5D17051EBA2D4400031A85 /* Main.storyboard */,
 				0F5D17081EBA2D4400031A85 /* Assets.xcassets */,
 				0F5D170A1EBA2D4400031A85 /* LaunchScreen.storyboard */,
@@ -299,6 +302,7 @@
 				0F5D175D1EBA543700031A85 /* ColorPalette.swift in Sources */,
 				0F5D17571EBA3EDC00031A85 /* Managed.swift in Sources */,
 				0F5D17331EBA315C00031A85 /* TopThreeTasks.xcdatamodeld in Sources */,
+				0F5D175B1EBA4F7400031A85 /* TasksTableViewController.swift in Sources */,
 				0F5D17501EBA3B2C00031A85 /* Day.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
