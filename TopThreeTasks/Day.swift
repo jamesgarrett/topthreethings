@@ -18,4 +18,8 @@ public class Day: NSManagedObject {
     @NSManaged public var date: NSDate
     @NSManaged public var tasks: Set<Task>
     
+extension Day: Managed {
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: "date", ascending: false)]
+    }
 }
