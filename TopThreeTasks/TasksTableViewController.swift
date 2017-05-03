@@ -64,9 +64,7 @@ class TasksTableViewController: UITableViewController {
         }
         taskDay = day
         CoreDataStack.shared.save()
-        firstTaskTextView.text = day.descriptionOfTask(at: .first) ?? ""
-        secondTaskTextView.text = day.descriptionOfTask(at: .second) ?? ""
-        thirdTaskTextView.text = day.descriptionOfTask(at: .third) ?? ""
+        updateUI()
     }
 
     fileprivate func updateTask(from textView: UITextView) {
@@ -85,13 +83,13 @@ class TasksTableViewController: UITableViewController {
         CoreDataStack.shared.save()
     }
 
-    fileprivate func resetUI() {
-        firstTaskTextView.text = ""
-        secondTaskTextView.text = ""
-        thirdTaskTextView.text = ""
-        firstTaskLabel.textColor = ColorPalette.inactiveGrayColor
-        secondTaskLabel.textColor = ColorPalette.inactiveGrayColor
-        thirdTaskLabel.textColor = ColorPalette.inactiveGrayColor
+    fileprivate func updateUI() {
+        firstTaskTextView.text = taskDay.descriptionOfTask(at: .first) ?? ""
+        secondTaskTextView.text = taskDay.descriptionOfTask(at: .second) ?? ""
+        thirdTaskTextView.text = taskDay.descriptionOfTask(at: .third) ?? ""
+        firstTaskLabel.textColor = firstTaskTextView.text.isEmpty ? ColorPalette.inactiveGrayColor : ColorPalette.activeGrayColor
+        secondTaskLabel.textColor = secondTaskTextView.text.isEmpty ? ColorPalette.inactiveGrayColor : ColorPalette.activeGrayColor
+        thirdTaskLabel.textColor = thirdTaskTextView.text.isEmpty ? ColorPalette.inactiveGrayColor : ColorPalette.activeGrayColor
         tableView.beginUpdates()
         tableView.endUpdates()
     }
@@ -100,7 +98,7 @@ class TasksTableViewController: UITableViewController {
         view.endEditing(true)
         taskDay.clearTasks()
         if CoreDataStack.shared.save() {
-            resetUI()
+            updateUI()
         }
     }
 }
