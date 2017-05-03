@@ -15,6 +15,7 @@
 		0F5D17171EBA2D4400031A85 /* TopThreeTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D17161EBA2D4400031A85 /* TopThreeTasksTests.swift */; };
 		0F5D17221EBA2D4400031A85 /* TopThreeTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D17211EBA2D4400031A85 /* TopThreeTasksUITests.swift */; };
 		0F5D17301EBA2DD300031A85 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D172F1EBA2DD300031A85 /* CoreDataStack.swift */; };
+		0F5D17331EBA315C00031A85 /* TopThreeTasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D17311EBA315C00031A85 /* TopThreeTasks.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0F5D17211EBA2D4400031A85 /* TopThreeTasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopThreeTasksUITests.swift; sourceTree = "<group>"; };
 		0F5D17231EBA2D4400031A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F5D172F1EBA2DD300031A85 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		0F5D17321EBA315C00031A85 /* TopThreeTasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TopThreeTasks.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				0F5D17011EBA2D4400031A85 /* AppDelegate.swift */,
 				0F5D17031EBA2D4400031A85 /* ViewController.swift */,
 				0F5D17551EBA3DE800031A85 /* CoreDataHelpers */,
+				0F5D17311EBA315C00031A85 /* TopThreeTasks.xcdatamodeld */,
 				0F5D17051EBA2D4400031A85 /* Main.storyboard */,
 				0F5D17081EBA2D4400031A85 /* Assets.xcassets */,
 				0F5D170A1EBA2D4400031A85 /* LaunchScreen.storyboard */,
@@ -276,6 +279,7 @@
 				0F5D17301EBA2DD300031A85 /* CoreDataStack.swift in Sources */,
 				0F5D17041EBA2D4400031A85 /* ViewController.swift in Sources */,
 				0F5D17021EBA2D4400031A85 /* AppDelegate.swift in Sources */,
+				0F5D17331EBA315C00031A85 /* TopThreeTasks.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +550,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0F5D17311EBA315C00031A85 /* TopThreeTasks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0F5D17321EBA315C00031A85 /* TopThreeTasks.xcdatamodel */,
+			);
+			currentVersion = 0F5D17321EBA315C00031A85 /* TopThreeTasks.xcdatamodel */;
+			path = TopThreeTasks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0F5D16F61EBA2D4400031A85 /* Project object */;
 }
