@@ -17,18 +17,15 @@ class TasksTableViewController: UITableViewController {
     @IBOutlet fileprivate weak var thirdTaskLabel: UILabel!
     @IBOutlet fileprivate weak var thirdTaskTextView: UITextView!
 
-    fileprivate var taskLabels: [UILabel] {
-        return [firstTaskLabel, secondTaskLabel, thirdTaskLabel]
-    }
-
-    fileprivate var tastTextViews: [UITextView] {
-        return [firstTaskTextView, secondTaskTextView, thirdTaskTextView]
-    }
+    fileprivate var taskDay: Day!
 
     // MARK: - View Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        CoreDataStack.shared.loadPersistentContainer {
+            self.loadTasks()
+        }
         customizeTableView()
     }
 
@@ -58,6 +55,35 @@ class TasksTableViewController: UITableViewController {
         }
     }
 
+    fileprivate func loadTasks() {
+        let startOfToday = Calendar.current.startOfDay(for: Date())
+        let predicate = NSPredicate(format: "date = %@", argumentArray: [startOfToday])
+        let day = Day.findOrCreate(in: CoreDataStack.shared.persistentContainer.viewContext, matching: predicate) { (day) in
+            day.date = startOfToday as NSDate
+        }
+        taskDay = day
+        try! CoreDataStack.shared.persistentContainer.viewContext.save()
+        firstTaskTextView.text = day.descriptionOfTask(at: .first) ?? ""
+        secondTaskTextView.text = day.descriptionOfTask(at: .second) ?? ""
+        thirdTaskTextView.text = day.descriptionOfTask(at: .third) ?? ""
+    }
+
+    fileprivate func saveTask(from textView: UITextView) {
+        let taskIndex: Day.DayTaskIndex
+        switch textView {
+        case firstTaskTextView:
+            taskIndex = .first
+        case secondTaskTextView:
+            taskIndex = .second
+        case thirdTaskTextView:
+            taskIndex = .third
+        default:
+            return
+        }
+        taskDay.updateTask(at: taskIndex, with: textView.text)
+        try! CoreDataStack.shared.persistentContainer.viewContext.save()
+    }
+
 }
 
 // MARK: - Table view delegate
@@ -82,10 +108,10 @@ extension TasksTableViewController: UITextViewDelegate {
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
-        guard textView.text.isEmpty else {
-            return
+        saveTask(from: textView)
+        if textView.text.isEmpty {
+            label(for: textView)?.textColor = ColorPalette.inactiveGrayColor
         }
-        label(for: textView)?.textColor = ColorPalette.inactiveGrayColor
     }
 
 }
