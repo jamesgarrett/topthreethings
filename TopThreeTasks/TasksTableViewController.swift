@@ -16,6 +16,7 @@ class TasksTableViewController: UITableViewController {
     @IBOutlet fileprivate weak var secondTaskTextView: UITextView!
     @IBOutlet fileprivate weak var thirdTaskLabel: UILabel!
     @IBOutlet fileprivate weak var thirdTaskTextView: UITextView!
+    @IBOutlet fileprivate weak var clearBarButtonItem: UIBarButtonItem!
 
     fileprivate var taskDay: Day!
 
@@ -62,13 +63,13 @@ class TasksTableViewController: UITableViewController {
             day.date = startOfToday as NSDate
         }
         taskDay = day
-        try! CoreDataStack.shared.persistentContainer.viewContext.save()
+        CoreDataStack.shared.save()
         firstTaskTextView.text = day.descriptionOfTask(at: .first) ?? ""
         secondTaskTextView.text = day.descriptionOfTask(at: .second) ?? ""
         thirdTaskTextView.text = day.descriptionOfTask(at: .third) ?? ""
     }
 
-    fileprivate func saveTask(from textView: UITextView) {
+    fileprivate func updateTask(from textView: UITextView) {
         let taskIndex: Day.DayTaskIndex
         switch textView {
         case firstTaskTextView:
@@ -81,9 +82,27 @@ class TasksTableViewController: UITableViewController {
             return
         }
         taskDay.updateTask(at: taskIndex, with: textView.text)
-        try! CoreDataStack.shared.persistentContainer.viewContext.save()
+        CoreDataStack.shared.save()
     }
 
+    fileprivate func resetUI() {
+        firstTaskTextView.text = ""
+        secondTaskTextView.text = ""
+        thirdTaskTextView.text = ""
+        firstTaskLabel.textColor = ColorPalette.inactiveGrayColor
+        secondTaskLabel.textColor = ColorPalette.inactiveGrayColor
+        thirdTaskLabel.textColor = ColorPalette.inactiveGrayColor
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+
+    @IBAction func clearButtonPressed(_ sender: UIBarButtonItem) {
+        view.endEditing(true)
+        taskDay.clearTasks()
+        if CoreDataStack.shared.save() {
+            resetUI()
+        }
+    }
 }
 
 // MARK: - Table view delegate
@@ -108,7 +127,7 @@ extension TasksTableViewController: UITextViewDelegate {
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
-        saveTask(from: textView)
+        updateTask(from: textView)
         if textView.text.isEmpty {
             label(for: textView)?.textColor = ColorPalette.inactiveGrayColor
         }

@@ -43,6 +43,12 @@ public class Day: NSManagedObject {
         taskToUpdate.taskDescription = text
     }
 
+    func clearTasks() {
+        for task in tasks {
+            managedObjectContext?.delete(task)
+        }
+    }
+
 }
 
 extension Day: Managed {

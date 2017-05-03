@@ -177,9 +177,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="NyE-IP-4Og">
-                        <barButtonItem key="rightBarButtonItem" image="topThree-noneFilled" id="ovj-Xi-OVn"/>
+                        <barButtonItem key="rightBarButtonItem" image="topThree-noneFilled" id="ovj-Xi-OVn">
+                            <connections>
+                                <action selector="clearButtonPressed:" destination="bqt-2B-gs5" id="u2x-0B-aJ8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="clearBarButtonItem" destination="ovj-Xi-OVn" id="gC8-ZL-DZm"/>
                         <outlet property="firstTaskLabel" destination="9cS-Xy-UyK" id="4uU-YX-8sS"/>
                         <outlet property="firstTaskTextView" destination="m8l-az-euN" id="2L1-YZ-0fn"/>
                         <outlet property="secondTaskLabel" destination="2sb-Yj-lFc" id="TEN-Sv-bWF"/>
