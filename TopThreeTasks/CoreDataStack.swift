@@ -20,4 +20,8 @@ final class CoreDataStack {
             completion()
         }
     }
+
+    @discardableResult func save() -> Bool {
+        return persistentContainer.viewContext.saveOrRollback()
+    }
 }

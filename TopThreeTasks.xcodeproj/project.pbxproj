@@ -20,6 +20,7 @@
 		0F5D17571EBA3EDC00031A85 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D17561EBA3EDB00031A85 /* Managed.swift */; };
 		0F5D175B1EBA4F7400031A85 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D175A1EBA4F7400031A85 /* TasksTableViewController.swift */; };
 		0F5D175D1EBA543700031A85 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D175C1EBA543600031A85 /* ColorPalette.swift */; };
+		0F5D175F1EBA955500031A85 /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D175E1EBA955500031A85 /* NSManagedObjectContextExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		0F5D17561EBA3EDB00031A85 /* Managed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		0F5D175A1EBA4F7400031A85 /* TasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		0F5D175C1EBA543600031A85 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		0F5D175E1EBA955500031A85 /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			children = (
 				0F5D172F1EBA2DD300031A85 /* CoreDataStack.swift */,
 				0F5D17561EBA3EDB00031A85 /* Managed.swift */,
+				0F5D175E1EBA955500031A85 /* NSManagedObjectContextExtension.swift */,
 			);
 			name = CoreDataHelpers;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				0F5D17571EBA3EDC00031A85 /* Managed.swift in Sources */,
 				0F5D17331EBA315C00031A85 /* TopThreeTasks.xcdatamodeld in Sources */,
 				0F5D175B1EBA4F7400031A85 /* TasksTableViewController.swift in Sources */,
+				0F5D175F1EBA955500031A85 /* NSManagedObjectContextExtension.swift in Sources */,
 				0F5D17501EBA3B2C00031A85 /* Day.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +560,7 @@
 				0F5D17281EBA2D4400031A85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F5D17291EBA2D4400031A85 /* Build configuration list for PBXNativeTarget "TopThreeTasksTests" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +569,7 @@
 				0F5D172B1EBA2D4400031A85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F5D172C1EBA2D4400031A85 /* Build configuration list for PBXNativeTarget "TopThreeTasksUITests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +578,7 @@
 				0F5D172E1EBA2D4400031A85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
