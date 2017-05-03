@@ -14,6 +14,7 @@
 		0F5D170C1EBA2D4400031A85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D170A1EBA2D4400031A85 /* LaunchScreen.storyboard */; };
 		0F5D17171EBA2D4400031A85 /* TopThreeTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D17161EBA2D4400031A85 /* TopThreeTasksTests.swift */; };
 		0F5D17221EBA2D4400031A85 /* TopThreeTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D17211EBA2D4400031A85 /* TopThreeTasksUITests.swift */; };
+		0F5D17301EBA2DD300031A85 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D172F1EBA2DD300031A85 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0F5D171D1EBA2D4400031A85 /* TopThreeTasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopThreeTasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5D17211EBA2D4400031A85 /* TopThreeTasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopThreeTasksUITests.swift; sourceTree = "<group>"; };
 		0F5D17231EBA2D4400031A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F5D172F1EBA2DD300031A85 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				0F5D17011EBA2D4400031A85 /* AppDelegate.swift */,
 				0F5D17031EBA2D4400031A85 /* ViewController.swift */,
+				0F5D17551EBA3DE800031A85 /* CoreDataHelpers */,
 				0F5D17051EBA2D4400031A85 /* Main.storyboard */,
 				0F5D17081EBA2D4400031A85 /* Assets.xcassets */,
 				0F5D170A1EBA2D4400031A85 /* LaunchScreen.storyboard */,
@@ -123,6 +126,14 @@
 				0F5D17231EBA2D4400031A85 /* Info.plist */,
 			);
 			path = TopThreeTasksUITests;
+			sourceTree = "<group>";
+		};
+		0F5D17551EBA3DE800031A85 /* CoreDataHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				0F5D172F1EBA2DD300031A85 /* CoreDataStack.swift */,
+			);
+			name = CoreDataHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F5D17301EBA2DD300031A85 /* CoreDataStack.swift in Sources */,
 				0F5D17041EBA2D4400031A85 /* ViewController.swift in Sources */,
 				0F5D17021EBA2D4400031A85 /* AppDelegate.swift in Sources */,
 			);
