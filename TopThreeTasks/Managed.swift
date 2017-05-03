@@ -34,7 +34,7 @@ extension Managed where Self: NSManagedObject {
     }
 
     static var sortedFetchRequest: NSFetchRequest<Self> {
-        let request: NSFetchRequest<Self> = Self.fetchRequest() as! NSFetchRequest<Self>
+        let request = NSFetchRequest<Self>(entityName: entityName)
         request.sortDescriptors = defaultSortDescriptors
         request.predicate = defaultPredicate
         return request
@@ -72,13 +72,13 @@ extension Managed where Self: NSManagedObject {
     }
 
     static func fetch(in context: NSManagedObjectContext, configure: (NSFetchRequest<Self>) -> () = { _ in }) -> [Self] {
-        let request: NSFetchRequest<Self> = Self.fetchRequest() as! NSFetchRequest<Self>
+        let request = NSFetchRequest<Self>(entityName: entityName)
         configure(request)
         return try! context.fetch(request)
     }
 
     static func count(in context: NSManagedObjectContext, configure: (NSFetchRequest<Self>) -> () = { _ in }) -> Int {
-        let request: NSFetchRequest<Self> = Self.fetchRequest() as! NSFetchRequest<Self>
+        let request = NSFetchRequest<Self>(entityName: entityName)
         configure(request)
         return try! context.count(for: request)
     }
