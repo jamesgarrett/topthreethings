@@ -16,7 +16,7 @@ public class Task: NSManagedObject {
     }
 
     @NSManaged public var id: Int16
-    @NSManaged public var taskDescription: String
+    @NSManaged public var taskDescription: String?
     @NSManaged public var day: Day
 
 }
