@@ -10,6 +10,7 @@ import CoreData
 
 final class CoreDataStack {
     static let shared = CoreDataStack()
+    var isPersistentStoreReady = false
     var persistentContainer = NSPersistentContainer(name: "TopThreeTasks")
 
     func loadPersistentContainer(completion: @escaping () -> ()) {
@@ -17,6 +18,7 @@ final class CoreDataStack {
             guard error == nil else {
                 fatalError()
             }
+            self.isPersistentStoreReady = true
             completion()
         }
     }
