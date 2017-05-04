@@ -19,15 +19,29 @@ class TasksTableViewController: UITableViewController {
     @IBOutlet fileprivate weak var clearBarButtonItem: UIBarButtonItem!
 
     fileprivate var taskDay: Day!
+    fileprivate var taskManager: TaskManager?
 
     // MARK: - View Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CoreDataStack.shared.loadPersistentContainer {
-            self.loadTasks()
-        }
         customizeTableView()
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(_:)), name: .UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(significantTimeChangeDidOccur(_:)), name: .UIApplicationSignificantTimeChange, object: nil)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let _ = taskManager {
+            loadTasks()
+        } else {
+            taskManager = TaskManager()
+            loadTasks()
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,18 +71,13 @@ class TasksTableViewController: UITableViewController {
     }
 
     fileprivate func loadTasks() {
-        let startOfToday = Calendar.current.startOfDay(for: Date())
-        let predicate = NSPredicate(format: "date = %@", argumentArray: [startOfToday])
-        let day = Day.findOrCreate(in: CoreDataStack.shared.persistentContainer.viewContext, matching: predicate) { (day) in
-            day.date = startOfToday as NSDate
-        }
-        taskDay = day
-        CoreDataStack.shared.save()
+        guard let taskManager = taskManager else { return }
+        taskDay = taskManager.fetchTaskDayForToday()
         updateUI()
     }
 
     fileprivate func updateTask(from textView: UITextView) {
-        let taskIndex: Day.DayTaskIndex
+        let taskIndex: TaskManager.DayTaskIndex
         switch textView {
         case firstTaskTextView:
             taskIndex = .first
@@ -79,14 +88,14 @@ class TasksTableViewController: UITableViewController {
         default:
             return
         }
-        taskDay.updateTask(at: taskIndex, with: textView.text)
-        CoreDataStack.shared.save()
+        taskManager?.updateTask(for: taskDay, at: taskIndex, with: textView.text)
     }
 
     fileprivate func updateUI() {
-        firstTaskTextView.text = taskDay.descriptionOfTask(at: .first) ?? ""
-        secondTaskTextView.text = taskDay.descriptionOfTask(at: .second) ?? ""
-        thirdTaskTextView.text = taskDay.descriptionOfTask(at: .third) ?? ""
+        guard let taskManager = taskManager else { return }
+        firstTaskTextView.text = taskManager.descriptionOfTask(for: taskDay, at: .first) ?? ""
+        secondTaskTextView.text = taskManager.descriptionOfTask(for: taskDay, at: .second) ?? ""
+        thirdTaskTextView.text = taskManager.descriptionOfTask(for: taskDay, at: .third) ?? ""
         firstTaskLabel.textColor = firstTaskTextView.text.isEmpty ? ColorPalette.inactiveGrayColor : ColorPalette.activeGrayColor
         secondTaskLabel.textColor = secondTaskTextView.text.isEmpty ? ColorPalette.inactiveGrayColor : ColorPalette.activeGrayColor
         thirdTaskLabel.textColor = thirdTaskTextView.text.isEmpty ? ColorPalette.inactiveGrayColor : ColorPalette.activeGrayColor
@@ -105,17 +114,22 @@ class TasksTableViewController: UITableViewController {
         } else {
             clearBarButtonItem.image = #imageLiteral(resourceName: "topThree-noneFilled")
         }
+    }
 
+    func willEnterForeground(_ notification: Notification) {
+        loadTasks()
+    }
+
+    func significantTimeChangeDidOccur(_ notification: Notification) {
+        loadTasks()
     }
 
     // MARK: - Actions
 
     @IBAction func clearButtonPressed(_ sender: UIBarButtonItem) {
         view.endEditing(true)
-        taskDay.clearTasks()
-        if CoreDataStack.shared.save() {
-            updateUI()
-        }
+        taskManager?.clearTasks(for: taskDay)
+        updateUI()
     }
 }
 
