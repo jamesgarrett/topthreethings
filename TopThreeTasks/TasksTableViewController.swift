@@ -131,6 +131,11 @@ class TasksTableViewController: UITableViewController {
         taskManager?.clearTasks(for: taskDay)
         updateUI()
     }
+
+    @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+
 }
 
 // MARK: - Table view delegate
