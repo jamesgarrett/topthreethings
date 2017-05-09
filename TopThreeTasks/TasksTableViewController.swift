@@ -16,7 +16,8 @@ class TasksTableViewController: UITableViewController {
     @IBOutlet fileprivate weak var secondTaskTextView: UITextView!
     @IBOutlet fileprivate weak var thirdTaskLabel: UILabel!
     @IBOutlet fileprivate weak var thirdTaskTextView: UITextView!
-    @IBOutlet fileprivate weak var clearBarButtonItem: UIBarButtonItem!
+    @IBOutlet fileprivate weak var clearButton: UIButton!
+    @IBOutlet fileprivate var headerView: UIView!
 
     fileprivate var taskDay: Day!
     fileprivate var taskManager: TaskManager?
@@ -106,13 +107,13 @@ class TasksTableViewController: UITableViewController {
 
     fileprivate func updateClearButton() {
         if !thirdTaskTextView.text.isEmpty {
-            clearBarButtonItem.image = #imageLiteral(resourceName: "topThree-allFilled")
+            clearButton.setImage(#imageLiteral(resourceName: "topThree-allFilled"), for: .normal)
         } else if !secondTaskTextView.text.isEmpty {
-            clearBarButtonItem.image = #imageLiteral(resourceName: "topThree-2Filled")
+            clearButton.setImage(#imageLiteral(resourceName: "topThree-2Filled"), for: .normal)
         } else if !firstTaskTextView.text.isEmpty {
-            clearBarButtonItem.image = #imageLiteral(resourceName: "topThree-1Filled")
+            clearButton.setImage(#imageLiteral(resourceName: "topThree-1Filled"), for: .normal)
         } else {
-            clearBarButtonItem.image = #imageLiteral(resourceName: "topThree-noneFilled")
+            clearButton.setImage(#imageLiteral(resourceName: "topThree-noneFilled"), for: .normal)
         }
     }
 
@@ -126,7 +127,7 @@ class TasksTableViewController: UITableViewController {
 
     // MARK: - Actions
 
-    @IBAction func clearButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func clearButtonPressed(_ sender: UIButton) {
         view.endEditing(true)
         taskManager?.clearTasks(for: taskDay)
         updateUI()
@@ -144,6 +145,16 @@ extension TasksTableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return headerView
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        print(traitCollection)
+
+        return (traitCollection.verticalSizeClass == .compact && traitCollection.horizontalSizeClass == .compact) ? 60 : 80
     }
 
 }

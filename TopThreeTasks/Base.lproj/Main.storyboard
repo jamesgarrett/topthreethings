@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sZB-6x-xOB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bqt-2B-gs5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +16,7 @@
             <objects>
                 <tableViewController id="bqt-2B-gs5" customClass="TasksTableViewController" customModule="TopThreeTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="cz4-oz-npa">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -45,7 +46,7 @@
                                                             </constraints>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="bqt-2B-gs5" id="6WI-p8-yba"/>
                                                             </connections>
@@ -94,7 +95,7 @@
                                                             </constraints>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="bqt-2B-gs5" id="pL9-hk-U2R"/>
                                                             </connections>
@@ -143,7 +144,7 @@
                                                             </constraints>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="bqt-2B-gs5" id="u8M-Li-1FG"/>
                                                             </connections>
@@ -178,16 +179,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="NyE-IP-4Og">
-                        <barButtonItem key="rightBarButtonItem" image="topThree-noneFilled" id="ovj-Xi-OVn">
-                            <connections>
-                                <action selector="clearButtonPressed:" destination="bqt-2B-gs5" id="u2x-0B-aJ8"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="topThree-noneFilled" id="ovj-Xi-OVn"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="clearBarButtonItem" destination="ovj-Xi-OVn" id="gC8-ZL-DZm"/>
+                        <outlet property="clearButton" destination="og9-OV-qOi" id="msF-mA-AiE"/>
                         <outlet property="firstTaskLabel" destination="9cS-Xy-UyK" id="4uU-YX-8sS"/>
                         <outlet property="firstTaskTextView" destination="m8l-az-euN" id="2L1-YZ-0fn"/>
+                        <outlet property="headerView" destination="6Qp-Pn-wes" id="TFD-y9-0QH"/>
                         <outlet property="secondTaskLabel" destination="2sb-Yj-lFc" id="TEN-Sv-bWF"/>
                         <outlet property="secondTaskTextView" destination="ShL-Qx-2mp" id="X2f-Ru-Pxb"/>
                         <outlet property="thirdTaskLabel" destination="28v-ry-dcT" id="EpE-yW-ZO6"/>
@@ -195,6 +193,28 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8S-VK-VfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="6Qp-Pn-wes">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og9-OV-qOi">
+                            <rect key="frame" x="327" y="30" width="40" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="8tT-Mn-BZI"/>
+                                <constraint firstAttribute="width" secondItem="og9-OV-qOi" secondAttribute="height" multiplier="1:1" id="oAk-Aj-30M"/>
+                            </constraints>
+                            <state key="normal" image="topThree-noneFilled"/>
+                            <connections>
+                                <action selector="clearButtonPressed:" destination="bqt-2B-gs5" eventType="touchUpInside" id="8Ge-Of-ziX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="og9-OV-qOi" firstAttribute="centerY" secondItem="6Qp-Pn-wes" secondAttribute="centerY" id="X8m-Zt-BRu"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="og9-OV-qOi" secondAttribute="trailing" id="l1k-hc-i8S"/>
+                    </constraints>
+                </view>
                 <tapGestureRecognizer id="cm6-Ae-LBl">
                     <connections>
                         <action selector="tapGestureAction:" destination="bqt-2B-gs5" id="kMp-Ui-Ude"/>
@@ -202,25 +222,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1848.8" y="109.29535232383809"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="vyx-zb-O3n">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sZB-6x-xOB" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7Wc-8R-77q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bqt-2B-gs5" kind="relationship" relationship="rootViewController" id="UcN-5L-yQp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lLS-La-Btv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="909.60000000000002" y="109.29535232383809"/>
         </scene>
     </scenes>
     <resources>
