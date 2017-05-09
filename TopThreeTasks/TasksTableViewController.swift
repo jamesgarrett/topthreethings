@@ -169,4 +169,20 @@ extension TasksTableViewController: UITextViewDelegate {
         }
     }
 
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard text == "\n" else { return true }
+        switch textView {
+        case firstTaskTextView:
+            secondTaskTextView.becomeFirstResponder()
+            return false
+        case secondTaskTextView:
+            thirdTaskTextView.becomeFirstResponder()
+            return false
+        case thirdTaskTextView:
+            thirdTaskTextView.resignFirstResponder()
+            return false
+        default:
+            return true
+        }
+    }
 }
