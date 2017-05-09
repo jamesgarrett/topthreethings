@@ -21,6 +21,7 @@
 		0F42B9331EC2611300F7C4D4 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F42B9171EC2611200F7C4D4 /* Proxima Nova Thin.otf */; };
 		0F42B9341EC2611300F7C4D4 /* Proxima Nova Xbold It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F42B9181EC2611200F7C4D4 /* Proxima Nova Xbold It.otf */; };
 		0F42B9351EC2611300F7C4D4 /* Proxima Nova Xbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F42B9191EC2611200F7C4D4 /* Proxima Nova Xbold.otf */; };
+		0F42B9371EC2656400F7C4D4 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F42B9361EC2656400F7C4D4 /* LaunchViewController.swift */; };
 		0F5D17021EBA2D4400031A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D17011EBA2D4400031A85 /* AppDelegate.swift */; };
 		0F5D17071EBA2D4400031A85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D17051EBA2D4400031A85 /* Main.storyboard */; };
 		0F5D17091EBA2D4400031A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D17081EBA2D4400031A85 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		0F42B9171EC2611200F7C4D4 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
 		0F42B9181EC2611200F7C4D4 /* Proxima Nova Xbold It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Xbold It.otf"; sourceTree = "<group>"; };
 		0F42B9191EC2611200F7C4D4 /* Proxima Nova Xbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Xbold.otf"; sourceTree = "<group>"; };
+		0F42B9361EC2656400F7C4D4 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		0F5D16FE1EBA2D4400031A85 /* TopThreeTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopThreeTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5D17011EBA2D4400031A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F5D17061EBA2D4400031A85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		0F5D17541EBA3BC100031A85 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F42B9361EC2656400F7C4D4 /* LaunchViewController.swift */,
 				0F5D174C1EBA3B2C00031A85 /* Day.swift */,
 				0F5D174E1EBA3B2C00031A85 /* Task.swift */,
 			);
@@ -374,6 +377,7 @@
 				0F5D17571EBA3EDC00031A85 /* Managed.swift in Sources */,
 				0F5D17331EBA315C00031A85 /* TopThreeTasks.xcdatamodeld in Sources */,
 				0F5D175B1EBA4F7400031A85 /* TasksTableViewController.swift in Sources */,
+				0F42B9371EC2656400F7C4D4 /* LaunchViewController.swift in Sources */,
 				0F5D175F1EBA955500031A85 /* NSManagedObjectContextExtension.swift in Sources */,
 				0F5D17501EBA3B2C00031A85 /* Day.swift in Sources */,
 			);
