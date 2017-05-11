@@ -11,11 +11,23 @@ import UIKit
 class TasksTableViewController: UITableViewController {
 
     @IBOutlet fileprivate weak var firstTaskLabel: UILabel!
-    @IBOutlet fileprivate weak var firstTaskTextView: UITextView!
+    @IBOutlet fileprivate weak var firstTaskTextView: UITextView! {
+        didSet {
+            firstTaskTextView.textColor = ColorPalette.activeGrayColor
+        }
+    }
     @IBOutlet fileprivate weak var secondTaskLabel: UILabel!
-    @IBOutlet fileprivate weak var secondTaskTextView: UITextView!
+    @IBOutlet fileprivate weak var secondTaskTextView: UITextView! {
+        didSet {
+            secondTaskTextView.textColor = ColorPalette.activeGrayColor
+        }
+    }
     @IBOutlet fileprivate weak var thirdTaskLabel: UILabel!
-    @IBOutlet fileprivate weak var thirdTaskTextView: UITextView!
+    @IBOutlet fileprivate weak var thirdTaskTextView: UITextView! {
+        didSet {
+            thirdTaskTextView.textColor = ColorPalette.activeGrayColor
+        }
+    }
     @IBOutlet fileprivate weak var clearButton: UIButton!
     @IBOutlet fileprivate var headerView: UIView!
 

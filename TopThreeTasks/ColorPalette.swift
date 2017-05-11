@@ -9,6 +9,6 @@
 import UIKit
 
 enum ColorPalette {
-    static let inactiveGrayColor = UIColor(white: 88.0/255.0, alpha: 1.0)
-    static let activeGrayColor = UIColor(white: 51.0/255.0, alpha: 1.0)
+    static let inactiveGrayColor = UIColor(white: 170.0/255.0, alpha: 1.0)
+    static let activeGrayColor = UIColor(white: 85.0/255.0, alpha: 1.0)
 }
