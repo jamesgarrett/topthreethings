@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fyM-mp-XGK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-raster" translatesAutoresizingMaskIntoConstraints="NO" id="fyM-mp-XGK">
                                 <rect key="frame" x="162" y="308" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fyM-mp-XGK" secondAttribute="height" multiplier="1:1" id="IlL-cG-qR0"/>
@@ -51,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="67" height="70"/>
+        <image name="logo-raster" width="66" height="66"/>
     </resources>
 </document>

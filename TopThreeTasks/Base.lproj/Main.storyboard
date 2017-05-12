@@ -239,7 +239,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3JB-Va-vNu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-raster" translatesAutoresizingMaskIntoConstraints="NO" id="3JB-Va-vNu">
                                 <rect key="frame" x="162" y="308" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3JB-Va-vNu" secondAttribute="height" multiplier="1:1" id="Tx0-RN-4f3"/>
@@ -271,7 +271,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="67" height="70"/>
+        <image name="logo-raster" width="66" height="66"/>
         <image name="topThree-noneFilled" width="25" height="27"/>
     </resources>
     <color key="tintColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
