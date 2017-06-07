@@ -286,18 +286,18 @@
 				TargetAttributes = {
 					0F5D16FD1EBA2D4400031A85 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = F7HJ63995G;
+						DevelopmentTeam = 6R3G778Q5L;
 						ProvisioningStyle = Automatic;
 					};
 					0F5D17111EBA2D4400031A85 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = F7HJ63995G;
+						DevelopmentTeam = 6R3G778Q5L;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0F5D16FD1EBA2D4400031A85;
 					};
 					0F5D171C1EBA2D4400031A85 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = F7HJ63995G;
+						DevelopmentTeam = 6R3G778Q5L;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0F5D16FD1EBA2D4400031A85;
 					};
@@ -533,11 +533,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F7HJ63995G;
+				DEVELOPMENT_TEAM = 6R3G778Q5L;
 				INFOPLIST_FILE = TopThreeTasks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.E-G-Creative.TopThreeTasks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.E-G-Creative.TopThreeThings";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -547,11 +547,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F7HJ63995G;
+				DEVELOPMENT_TEAM = 6R3G778Q5L;
 				INFOPLIST_FILE = TopThreeTasks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.E-G-Creative.TopThreeTasks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.E-G-Creative.TopThreeThings";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -562,7 +562,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = F7HJ63995G;
+				DEVELOPMENT_TEAM = 6R3G778Q5L;
 				INFOPLIST_FILE = TopThreeTasksTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "E-G-Creative.TopThreeTasksTests";
@@ -577,7 +577,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = F7HJ63995G;
+				DEVELOPMENT_TEAM = 6R3G778Q5L;
 				INFOPLIST_FILE = TopThreeTasksTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "E-G-Creative.TopThreeTasksTests";
@@ -591,7 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = F7HJ63995G;
+				DEVELOPMENT_TEAM = 6R3G778Q5L;
 				INFOPLIST_FILE = TopThreeTasksUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "E-G-Creative.TopThreeTasksUITests";
@@ -605,7 +605,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = F7HJ63995G;
+				DEVELOPMENT_TEAM = 6R3G778Q5L;
 				INFOPLIST_FILE = TopThreeTasksUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "E-G-Creative.TopThreeTasksUITests";
