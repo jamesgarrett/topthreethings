@@ -165,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5D17541EBA3BC100031A85 /* Model */,
+				0F42B9361EC2656400F7C4D4 /* LaunchViewController.swift */,
 				0F5D175A1EBA4F7400031A85 /* TasksTableViewController.swift */,
 				0F7FD7281EBB80E600C7988A /* TaskManager.swift */,
 				0F5D175C1EBA543600031A85 /* ColorPalette.swift */,
@@ -201,7 +202,6 @@
 		0F5D17541EBA3BC100031A85 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0F42B9361EC2656400F7C4D4 /* LaunchViewController.swift */,
 				0F5D174C1EBA3B2C00031A85 /* Day.swift */,
 				0F5D174E1EBA3B2C00031A85 /* Task.swift */,
 			);
